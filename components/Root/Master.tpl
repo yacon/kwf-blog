@@ -10,10 +10,17 @@
         <div id="page">
             <div id="outerHeader">
                 <div id="header">
+                    header
+                </div>
             </div>
             <div id="outerContent">
                 <div id="content">
-                    <?=$this->component($this->data);?>
+                    <div id="innerContent">
+                        <?=$this->component($this->data);?>
+                    </div>
+                    <div id="sidebar">
+                        sidebar
+                    </div>
                 </div>
             </div>
             <div id="outerFooter">

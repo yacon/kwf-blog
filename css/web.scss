@@ -1,0 +1,49 @@
+@import "susy";
+@import "compass/utilities/general/clearfix";
+$total-columns  : 4;
+$column-width   : 940px / $total-columns;
+$gutter-width   : 0px;
+$grid-padding   : 0px;
+$container-style: magic;
+
+body.ext-ie6 { text-align: center; }
+
+body.frontend { background: var(darkGray); }
+
+#page {
+    @include container;
+    #outerHeader {
+        #header {
+            @include span-columns(4 omega);
+            background: var(lightGray);
+            height: 140px;
+        }
+    }
+    #outerContent {
+        @include span-columns(4 omega);
+        @include pie-clearfix;
+        height: auto;
+        position: relative;
+        z-index: 1;
+        #content {
+            @include pie-clearfix;
+            margin: 0 auto;
+            background: var(lightGray);
+            #innerContent {
+                @include span-columns(3);
+            }
+            #sidebar {
+                @include span-columns(1 omega);
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-height: 768px), (max-width: 768px) {
+}
+@media (max-width: 480px) {
+}

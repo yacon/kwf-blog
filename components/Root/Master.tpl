@@ -25,6 +25,7 @@
             </div>
             <div id="outerFooter">
                 <div id="footer" class="webStandard">
+                    <?=$this->link('http://www.koala-framework.org', '&copy; koala-framework.org')?>
                 </div>
             </div>
         </div>

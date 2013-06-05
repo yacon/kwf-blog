@@ -38,6 +38,21 @@ body.frontend { background: var(lightGray); }
             }
         }
     }
+    #outerFooter {
+        #footer {
+            @include span-columns(4 omega);
+            @include pie-clearfix;
+            text-align: center;
+            margin: 0 auto;
+            font-weight: bold;
+            color: var(light);
+            background: var(darkGray);
+            height: 40px;
+        }
+        #footer a {
+            color: var(light);
+        }
+    }
     @include at-breakpoint(4) {
         #outerHeader {
             #header {
@@ -56,6 +71,12 @@ body.frontend { background: var(lightGray); }
                 #sidebar {
                     @include span-columns(1 omega);
                 }
+            }
+        }
+        #outerFooter {
+            #footer {
+                text-align: left;
+                height: 140px;
             }
         }
     }

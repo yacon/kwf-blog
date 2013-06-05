@@ -8,42 +8,55 @@ $container-style: magic;
 
 body.ext-ie6 { text-align: center; }
 
-body.frontend { background: var(darkGray); }
+body.frontend { background: var(lightGray); }
 
 #page {
     @include container;
+
     #outerHeader {
         #header {
-            @include span-columns(4 omega);
-            background: var(lightGray);
-            height: 140px;
+        background: var(darkGray);
+        height: 40px;
+        text-align: center;
+        @include span-columns(4 omega);
         }
     }
     #outerContent {
-        @include span-columns(4 omega);
-        @include pie-clearfix;
-        height: auto;
         position: relative;
         z-index: 1;
+        @include span-columns(4 omega);
         #content {
             @include pie-clearfix;
+            text-align: center;
             margin: 0 auto;
-            background: var(lightGray);
+            background: var(light);
             #innerContent {
-                @include span-columns(3);
+            @include span-columns(4 omega);
             }
             #sidebar {
-                @include span-columns(1 omega);
+                @include span-columns(4 omega);
             }
         }
     }
-}
-
-@media (min-width: 767px) and (max-width: 1024px) {
-}
-@media (max-width: 767px) {
-}
-@media (max-height: 768px), (max-width: 768px) {
-}
-@media (max-width: 480px) {
+    @include at-breakpoint(4) {
+        #outerHeader {
+            #header {
+                text-align: left;
+                @include span-columns(4 omega);
+                height: 140px;
+            }
+        }
+        #outerContent {
+            @include span-columns(4 omega);
+            #content {
+            text-align: left;
+                #innerContent {
+                    @include span-columns(3);
+                }
+                #sidebar {
+                    @include span-columns(1 omega);
+                }
+            }
+        }
+    }
 }
